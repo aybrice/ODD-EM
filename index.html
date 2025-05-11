@@ -21,6 +21,9 @@
     }
 
     header {
+      position: sticky;
+      top: 0;
+      z-index: 1000;
       display: flex;
       justify-content: space-between;
       align-items: center;
@@ -105,9 +108,10 @@
 
     .odd-list {
       display: grid;
-      grid-template-columns: 1fr 1fr;
+      grid-template-columns: repeat(auto-fit, minmax(350px, 1fr));
       gap: 25px;
       margin-top: 30px;
+      justify-items: center;
     }
 
     .odd {
@@ -119,7 +123,8 @@
       align-items: center;
       gap: 15px;
       box-shadow: 0 5px 15px rgba(0, 0, 0, 0.05);
-      animation: fadeInUp 1s ease;
+      width: 100%;
+      max-width: 550px;
     }
 
     .odd img {
@@ -177,14 +182,35 @@
       margin-top: 60px;
     }
 
+    .back-to-top {
+      position: fixed;
+      bottom: 20px;
+      right: 20px;
+      background: #2e7d32;
+      color: white;
+      padding: 12px 14px;
+      border-radius: 50%;
+      font-size: 18px;
+      box-shadow: 0 4px 10px rgba(0,0,0,0.2);
+      text-decoration: none;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+    }
+
     @keyframes fadeIn {
       0% { opacity: 0; transform: translateY(-20px); }
       100% { opacity: 1; transform: translateY(0); }
     }
-
-    @keyframes fadeInUp {
-      0% { opacity: 0; transform: translateY(20px); }
-      100% { opacity: 1; transform: translateY(0); }
+    /* Animation fade-in */
+    .fade-in {
+        opacity: 0;
+        transform: translateY(20px);
+        transition: opacity 0.6s ease-out, transform 0.6s ease-out;
+    }
+    .fade-in.visible {
+    opacity: 1;
+    transform: translateY(0);
     }
   </style>
 </head>
@@ -205,23 +231,23 @@
     </nav>
   </header>
 
-  <section class="hero">
+  <section class="hero fade-in">
     <h1>Mise en place de potagers dans les écoles de Saint-Pierre</h1>
     <p>Déployer le développement durable à l’échelle d’une collectivité territoriale</p>
   </section>
 
-  <div class="image-container">
+  <div class="image-container fade-in">
     <img src="images/plante-main.jpg" alt="Plante dans une main">
     <p style="margin-top: 10px; color: #555; font-size: 0.9em;">https://www.beart.fr/les-3-piliers-du-developpement-durable/</p>
   </div>
 
-  <section class="section" id="objectif">
+  <section class="section fade-in" id="objectif">
     <h2>Objectif du projet :</h2>
     <p style="font-weight: bold; margin-bottom: 10px;">Comment la mise en place de potagers communs dans les écoles primaires de Saint-Pierre peut-elle sensibiliser les élèves au développement durable tout en renforçant leur lien avec l’environnement et la communauté locale ?</p>
     <p>L’objectif serait de mettre un petit potager commun dans les écoles, afin de faire découvrir aux enfants plusieurs thématiques telles que :</p>
   </section>
 
-  <section class="section" id="odd">
+  <section class="section fade-in" id="odd">
     <h2>Objectifs de Développement Durable (ODD)</h2>
     <div class="odd-list">
       <div class="odd">
@@ -243,7 +269,7 @@
     </div>
   </section>
 
-  <section class="video-section" id="ressources">
+  <section class="video-section fade-in" id="ressources">
     <h2>Interview Germi'acteurs - À venir</h2>
     <div class="video-container">
       <div class="video-frame">
@@ -258,5 +284,30 @@
   <footer>
     <p>© 2025 - Projet BUT2 • Maylis Jacquemond, Emma Burel</p>
   </footer>
+
+  <a href="#" class="back-to-top" title="Retour en haut"><i class="fas fa-arrow-up"></i></a>
+<script>
+document.addEventListener('DOMContentLoaded', () => {
+  const faders = document.querySelectorAll('.fade-in');
+  const options = {
+    root: null,
+    threshold: 0,
+    rootMargin: '0px 0px -100px 0px'
+  };
+
+  const observer = new IntersectionObserver((entries) => {
+    entries.forEach(entry => {
+      if (entry.isIntersecting) {
+        entry.target.classList.add('visible');
+      } else {
+        entry.target.classList.remove('visible');
+      }
+    });
+  }, options);
+
+  faders.forEach(el => observer.observe(el));
+});
+</script>
+
 </body>
 </html>
