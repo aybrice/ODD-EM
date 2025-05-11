@@ -1,0 +1,261 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Potager Durable - Saint-Pierre</title>
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
+  <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;700&display=swap" rel="stylesheet">
+  <style>
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+    }
+
+    body {
+      font-family: 'Roboto', sans-serif;
+      background-color: #f4fdf7;
+      color: #333;
+      overflow-x: hidden;
+    }
+
+    header {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      padding: 15px 40px;
+      background-color: #e8f5e9;
+      border-bottom: 3px solid #2e7d32;
+    }
+
+    .logo {
+      font-size: 1.6em;
+      font-weight: bold;
+      color: #2e7d32;
+      display: flex;
+      align-items: center;
+      gap: 10px;
+    }
+
+    nav ul {
+      display: flex;
+      list-style: none;
+      gap: 25px;
+    }
+
+    nav ul li a {
+      text-decoration: none;
+      font-weight: 500;
+      color: #2e7d32;
+      transition: color 0.3s;
+    }
+
+    nav ul li a:hover {
+      color: #1b5e20;
+    }
+
+    .hero {
+      background: linear-gradient(to right, #66bb6a, #43a047);
+      color: white;
+      padding: 60px 20px;
+      text-align: center;
+      animation: fadeIn 1s ease-in-out;
+    }
+
+    .hero h1 {
+      font-size: 2.2em;
+      margin-bottom: 15px;
+    }
+
+    .hero p {
+      font-size: 1.2em;
+      max-width: 800px;
+      margin: 0 auto;
+    }
+
+    .image-container {
+      text-align: center;
+      margin-top: 30px;
+    }
+
+    .image-container img {
+      max-width: 90%;
+      border-radius: 10px;
+      box-shadow: 0 10px 30px rgba(0, 0, 0, 0.1);
+      transition: transform 0.5s;
+    }
+
+    .image-container img:hover {
+      transform: scale(1.02);
+    }
+
+    .section {
+      padding: 60px 20px;
+      max-width: 1000px;
+      margin: auto;
+    }
+
+    .section h2 {
+      color: #2e7d32;
+      margin-bottom: 20px;
+      font-size: 1.8em;
+      text-align: center;
+    }
+
+    .odd-list {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 25px;
+      margin-top: 30px;
+    }
+
+    .odd {
+      background: #ffffff;
+      padding: 20px;
+      border-left: 5px solid #66bb6a;
+      border-radius: 8px;
+      display: flex;
+      align-items: center;
+      gap: 15px;
+      box-shadow: 0 5px 15px rgba(0, 0, 0, 0.05);
+      animation: fadeInUp 1s ease;
+    }
+
+    .odd img {
+      width: 50px;
+      height: 50px;
+    }
+
+    .video-section {
+      background: #e8f5e9;
+      padding: 60px 20px;
+      animation: fadeIn 1s ease-in-out;
+    }
+
+    .video-section h2 {
+      text-align: center;
+      color: #2e7d32;
+      font-size: 1.8em;
+      margin-bottom: 40px;
+    }
+
+    .video-container {
+      display: flex;
+      flex-wrap: wrap;
+      justify-content: center;
+      gap: 40px;
+      align-items: center;
+    }
+
+    .video-frame {
+      width: 100%;
+      max-width: 560px;
+      height: 315px;
+      background: #ccc;
+      border-radius: 10px;
+      box-shadow: 0 10px 30px rgba(0, 0, 0, 0.1);
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      font-size: 1.2em;
+      color: #555;
+    }
+
+    .video-description {
+      max-width: 400px;
+      font-size: 1em;
+      color: #333;
+      line-height: 1.5;
+    }
+
+    footer {
+      background: #2e7d32;
+      color: white;
+      text-align: center;
+      padding: 30px 20px;
+      margin-top: 60px;
+    }
+
+    @keyframes fadeIn {
+      0% { opacity: 0; transform: translateY(-20px); }
+      100% { opacity: 1; transform: translateY(0); }
+    }
+
+    @keyframes fadeInUp {
+      0% { opacity: 0; transform: translateY(20px); }
+      100% { opacity: 1; transform: translateY(0); }
+    }
+  </style>
+</head>
+<body>
+  <header>
+    <div class="logo">
+      <i class="fas fa-seedling"></i>
+      Développement Durable
+    </div>
+    <nav>
+      <ul>
+        <li><a href="#">Accueil</a></li>
+        <li><a href="#objectif">Objectif</a></li>
+        <li><a href="#odd">ODD</a></li>
+        <li><a href="#ressources">Ressources</a></li>
+        <li><a href="#apropos">À propos</a></li>
+      </ul>
+    </nav>
+  </header>
+
+  <section class="hero">
+    <h1>Mise en place de potagers dans les écoles de Saint-Pierre</h1>
+    <p>https://www.beart.fr/les-3-piliers-du-developpement-durable/</p>
+  </section>
+
+  <div class="image-container">
+    <img src="images/plante-main.jpg" alt="Plante dans une main">
+  </div>
+
+  <section class="section" id="objectif">
+    <h2>Objectif du projet :</h2>
+    <p style="font-weight: bold; margin-bottom: 10px;">Comment la mise en place de potagers communs dans les écoles primaires de Saint-Pierre peut-elle sensibiliser les élèves au développement durable tout en renforçant leur lien avec l’environnement et la communauté locale ?</p>
+    <p>L’objectif serait de mettre un petit potager commun dans les écoles, afin de faire découvrir aux enfants plusieurs thématiques telles que :</p>
+  </section>
+
+  <section class="section" id="odd">
+    <h2>Objectifs de Développement Durable (ODD)</h2>
+    <div class="odd-list">
+      <div class="odd">
+        <img src="images/odd12.png" alt="ODD 12">
+        <p><strong>ODD 12</strong> : la gestion de l’alimentation (autosuffisance), avoir un rapport direct avec la nourriture, comprendre les enjeux et l’importance des végétaux (fruits/légumes/herbes aromatiques).</p>
+      </div>
+      <div class="odd">
+        <img src="images/odd15.png" alt="ODD 15">
+        <p><strong>ODD 15</strong> : Apprendre le rapport entre la nourriture et l’écosystème.</p>
+      </div>
+      <div class="odd">
+        <img src="images/odd4.png" alt="ODD 4">
+        <p><strong>ODD 4</strong> : Intégrer dans l’éducation une sensibilisation pour un développement durable dès le plus jeune âge.</p>
+      </div>
+      <div class="odd">
+        <img src="images/odd3.png" alt="ODD 3">
+        <p><strong>ODD 3</strong> : Faire participer un ensemble d’élève à une activité ludique et améliorer leur autonomie.</p>
+      </div>
+    </div>
+  </section>
+
+  <section class="video-section" id="ressources">
+    <h2>Interview Germin'actus - À venir</h2>
+    <div class="video-container">
+      <div class="video-frame">
+        Vidéo en préparation
+      </div>
+      <div class="video-description">
+        <p><em>texte a mettre une fois que emma son binome aura fait le travail demander </em></p>
+      </div>
+    </div>
+  </section>
+
+  <footer>
+    <p>© 2025 - Projet BUT2 • Maylis Jacquemond, Emma Burel</p>
+  </footer>
+</body>
+</html>
